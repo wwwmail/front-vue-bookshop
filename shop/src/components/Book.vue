@@ -2,10 +2,10 @@
 
 <template>
 
-<div class="container">
-    <div class="book-list row">
+<div class="container main-container">
+    <div class="row">
       <div class="col-2"></div>
-        <div class="card col-8">
+        <div class="card col-8 book-list ">
             <div class="card-body">
                 <div class="card-img">
                     <icon name="book"></icon>

@@ -43,22 +43,27 @@ export default {
 </script>
 
 <style>
-
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #F2F2FA;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #F2F2FA;
+  height: 100%;
 }
 .main-container {
   background: #fff;
   box-shadow: #c0bfbf 0px 10px 8px;
-  border-left: 1px solid #d4d4d4;
-  border-right: 1px solid #d4d4d4;
+  margin-bottom: 15px;
 }
 .navbar {
   background: #0994b3;
   border-bottom: 2px solid #0c7e97;
+  margin-bottom: 15px;
 }
 .navbar a {
   color: #fff;
@@ -190,21 +195,23 @@ ul {
   bottom: 10px;
   left: 10px;
 }
-.btn-add-cart {
-  float: right;
+.btn-style{
   font-size: 14px;
   background: #0994b3;
   color: #fff;
   padding: 3px 10px;
-  margin-top: 2px;
   -webkit-box-shadow: 0 1px 0 #0a778f;
   box-shadow: 0 1px 0 #0a778f;
   border: 1px solid #0b87a2;
+}
+.btn-add-cart {
+  float: right;
+  margin-top: 2px;
   position: absolute;
   bottom: 10px;
   right: 10px;
 }
-.btn-add-cart:hover, .btn-add-cart:focus {
+.btn-style:hover, .btn-style:focus {
   opacity: 0.8;
 }
 .btn {
@@ -232,6 +239,7 @@ ul {
   margin-top: 5px;
   color: #666;
   cursor: pointer;
+  display: inline-block;
 }
 .plus {
   line-height: 12px;
@@ -239,5 +247,101 @@ ul {
 
 .item-list{
   padding: 10px;
+}
+.top-title {
+  background: #9feed1;
+  border-bottom: 1px solid #86c2ac;
+  line-height: 30px;
+  vertical-align: middle;
+}
+.fw-b {
+  font-weight: bold;
+}
+.cart-contetnt {
+  line-height: 25px;
+}
+.cart-contetnt  a.delete, .cart-contetnt  a.delete:hover, .cart-contetnt  a.delete:focus, .books-container-admin a.delete, .books-container-admin  a.delete:hover, .books-container-admin  a.delete:focus,
+.users-admin-container a.delete, .users-admin-container  a.delete:hover, .users-admin-container  a.delete:focus{
+  color: #e80101;
+  cursor: pointer;
+}
+.cart-contetnt .row div{
+  padding: 10px 15px;
+}
+.payments-type {
+  margin-left: 15px;
+  height: 32px;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+.btn-create-order {
+  font-size: 16px;
+}
+.title-register, .title-login, .title-current, .title-current-user, .title-current-order {
+  width: 100%;
+  border-bottom: 1px solid #d7d7d7;
+  padding: 10px 0;
+  margin: 0;
+}
+.btn-register, .btn-login {
+  padding: 4px 40px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.register-container label, .login-container label {
+  line-height: 38px;
+}
+.register-container .form-group .input-group, .login-container .form-group .input-group{
+  position: relative;
+}
+.register-container .form-group .input-group-addon, .login-container .form-group .input-group-addon{
+  position: absolute;
+  z-index: 9;
+  left: 9px;
+  top: 5px;
+  color: #969696;
+}
+.register-container .form-group .form-control, .login-container .form-group .form-control{
+  padding-left: 35px;
+}
+.btn-update-book {
+  font-size: 16px;
+  padding: 7px 15px;
+}
+.update-authors, .update-book {
+  border-bottom: 1px solid #d2d2d2;
+  padding-bottom: 20px;
+}
+.update-genres {
+  padding-bottom: 20px;
+}
+.genre-admin-container .btn-style, .author-admin-container .btn-style, .user-admin-container .btn-style{
+  font-size: 16px;
+  padding: 6px 15px;
+  margin-right: 10px;
+}
+.btn-delete-genre, .btn-delete-order{
+  background: #f4f4f4;
+  color: #e80101;
+  border-color: #ced4da;
+  -webkit-box-shadow: 0 1px 0 #e1e1e1;
+  box-shadow: 0 1px 0 #e1e1e1;
+}
+.user-admin-container {
+  padding-bottom: 20px;
+}
+.item-status .form-control {
+  width: 50%;
+  float: left;
+  margin-left: 10px;
+}
+.item-status .btn-style {
+  font-size: 16px;
+  padding: 5px 10px;
+  margin-left: 15px;
+}
+.btn-delete-order {
+  font-size: 16px;
+  padding: 5px 10px;
 }
 </style>

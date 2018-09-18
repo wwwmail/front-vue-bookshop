@@ -5,7 +5,7 @@
 
 <template>
 
-<div class="container main-container">
+<div class="container main-container genre-admin-container">
 <div class="row">
   <div class="col-12">{{infoMessage}}</div>
 </div>
@@ -16,7 +16,7 @@
         {{addMessage}}
       </div>
       <div class="col-6">
-        <button class="btn primary" v-on:click="addGenre">add genre</button>
+        <button class="btn btn-style" v-on:click="addGenre">add genre</button>
       </div>
 
   </div>
@@ -25,15 +25,11 @@
         <div class="col-6" >
           <input class="form-control"  v-model="item.title"   >
         </div>
-        <div class="col-1">
-          <button class="btn" v-on:click="updateGenre(item.id, item.title)">chenge</button>
-        </div>
-        <div class="col-1">
-            <button class="btn" v-on:click="deleteGenre(item.id)">  <icon name="trash-alt"></icon></button>
-        </div>
         <div class="col-4">
-
+          <button class="btn btn-style" v-on:click="updateGenre(item.id, item.title)">chenge</button>
+          <button class="btn btn-style btn-delete-genre" v-on:click="deleteGenre(item.id)">  <icon name="trash-alt"></icon></button>
         </div>
+        <div class="col-2"></div>
 
   </div>
 

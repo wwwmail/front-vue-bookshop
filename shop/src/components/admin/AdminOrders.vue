@@ -10,42 +10,49 @@
     <div class="row">
         <div class="col-12">{{infoMessage}}</div>
     </div>
+    <div class="row item-list top-title">
+      <div class="col-1">#</div>
+      <div class="col-1 text-center">user id</div>
+      <div class="col-2 text-center">created</div>
+      <div class="col-1 text-center">status</div>
+      <div class="col-4 text-center">udate status</div>
+      <div class="col-1 text-center">payment</div>
+      <div class="col-1 text-center">price</div>
+      <div class="col-1 text-center">delete</div>
 
+    </div>
     <div class="row item-list" v-for="(item, index) in orders">
         <div class="col-1"><router-link :to="{ name: 'AdminOrder', params: {id: item.id } }">{{index+1}}</router-link></div>
-        <div class="col-1">
+        <div class="col-1 text-center">
            <router-link :to="{ name: 'AdminOrder', params: {id: item.id } }">{{item.user_id}}</router-link>
 
         </div>
-        <div class="col-2">
+        <div class="col-2 text-center">
             {{item.created}}
         </div>
-        <div class="col-1">
+        <div class="col-1 text-center">
             {{item.status}}
         </div>
-        <div class="col-2">
+        <div class="col-4 item-status">
             <select class="form-control" v-model="item.status">
 
                 <option value="confirmed">confirmed</option>
                 <option value="pending">pending</option>
             </select>
-            <button class="btn" v-on:click="udateOrder(item)">update</button>
+            <button class="btn btn-style" v-on:click="udateOrder(item)">update</button>
         </div>
 
-        <div class="col-1">
+        <div class="col-1 text-center">
             {{item.payment_id}}
         </div>
-        <div class="col-1">
+        <div class="col-1 text-center">
             {{item.total_order}} $
         </div>
 
-        <div class="col-1">
-            <button class="btn" v-on:click="deleteorder(item)">
+        <div class="col-1 text-center">
+            <button class="btn btn-style btn-delete-order" v-on:click="deleteorder(item)">
                 <icon name="trash-alt"></icon>
             </button>
-        </div>
-        <div class="col-2">
-
         </div>
 
     </div>

@@ -2,34 +2,27 @@
 
 <template>
 
-<div class="container main-container">
-
-    <div class="row b-b">
-      <div class="col-10">
-      <span v-if="infoMessage">{{infoMessage}}</span>
-      </div>
-      <div class="col-2">Your personal discount is {{userDiscount}} %</div>
-    </div>
-
-    <div class="row b-b">
+<div class="container main-container cart-contetnt">
+    {{infoMessage}}
+    <div class="row b-b top-title">
         <div class="col-3">
             title book
         </div>
-        <div class="col-2">
+        <div class="col-2 text-center">
             price
         </div>
-        <div class="col-1">
+        <div class="col-1 text-center">
           discount
         </div>
 
-        <div class="col-3">
+        <div class="col-2 text-center">
             add, substract
         </div>
-        <div class="col-1">
+        <div class="col-1 text-center">
             delete
         </div>
-        <div class="col-2">
-            price by book(s)
+        <div class="col-3 text-right">
+            price by book(s) for with Your personal discount {{userDiscount}} %
         </div>
     </div>
 
@@ -37,49 +30,51 @@
         <div class="col-3">
             {{item.title}}
         </div>
-        <div class="col-2">
+        <div class="col-2 text-center">
             {{item.price}}
         </div>
-        <div class="col-1">
+        <div class="col-1 text-center">
           {{item.discount}} %
         </div>
-        <div class="col-3">
+        <div class="col-2 text-center">
 
-            <span v-on:click="subtractCountBook(item.bookId, item.count)" class="float-left minus">
+            <span v-on:click="subtractCountBook(item.bookId, item.count)" class=" minus">
                 -
-            </span> <span class="float-left">{{item.count}}</span>
+            </span> <span class="">{{item.count}}</span>
 
-            <span v-on:click="addCountBook(item.bookId, item.count)" class="float-left plus">
+            <span v-on:click="addCountBook(item.bookId, item.count)" class=" plus">
                 +
             </span>
         </div>
-        <div class="col-1">
-            <p v-on:click="deleteFromCart(item.bookId)">
+        <div class="col-1 text-center">
+            <a v-on:click="deleteFromCart(item.bookId)" class="delete">
                 <icon name="trash-alt"></icon>
-            </p>
+            </a>
         </div>
 
-        <div class="col-2">
+        <div class="col-3 text-right">
             {{subCount(item.price, item.count, item.discount)}}
         </div>
     </div>
 
-    <div class="row b-b">
-        <div class="col-8">
+    <div class="row b-b fw-b">
+        <div class="col-7">
         </div>
-        <div class="col-2"> Total: {{total}}</div>
-        <div class="col-2">With personal discout: {{totalWithPersonalDiscount}}</div>
+        <div class="col-5 text-right"> 
+            Total: {{total}} <br>
+            With personal discout: {{totalWithPersonalDiscount}}
+        </div>
     </div>
 
     <div class="row">
       <div class="col-8">
-      <p>Payments type:</p>
-      <select v-model="selected" >
+      <span>Payments type:</span>
+      <select v-model="selected" class="payments-type" >
         <option v-for="option in payments" v-bind:value="option.id">{{option.type}}</option>
       </select>
     </div>
-    <div class="col-4">
-      <button class="btn btn-primary" v-on:click="createOrder">Create order</button>
+    <div class="col-4 text-right">
+      <button class="btn btn-style btn-create-order" v-on:click="createOrder">Create order</button>
     </div>
     </div>
 </div>

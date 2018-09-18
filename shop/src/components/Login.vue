@@ -5,19 +5,16 @@
 <div class="hello">
 
 
-    <div class="container">
+    <div class="container main-container login-container">
         <form class="form-horizontal" role="form">
             <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <h2>Login Form</h2>
-                    <hr>
-                </div>
+                <h2 class="title-login text-center">Login Form</h2>
             </div>
             <h3>{{infoMessage}}</h3>
 
             <div class="row">
-                <div class="col-md-3 field-label-responsive">
+                <div class="col-md-2"></div>
+                <div class="col-md-2 field-label-responsive">
                     <label for="email">E-Mail Address</label>
                 </div>
                 <div class="col-md-6">
@@ -30,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="form-control-feedback">
                         <span class="text-danger align-middle">
                           <span v-if="errorEmail">  {{errorEmail}} </span>
@@ -39,7 +36,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 field-label-responsive">
+                <div class="col-md-2"></div>
+                <div class="col-md-2 field-label-responsive">
                     <label for="password">Password</label>
                 </div>
                 <div class="col-md-6">
@@ -52,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="form-control-feedback">
                         <span class="text-danger align-middle">
                           <span v-if="errorPassword">  {{errorPassword}} </span>
@@ -62,9 +60,9 @@
             </div>
 
             <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <span type="submit" v-on:click="sendForm()" class="btn btn-success">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                    <span type="submit" v-on:click="sendForm()" class="btn btn-style btn-login">
                         <icon name="plus"></icon> Login</span>
                 </div>
             </div>

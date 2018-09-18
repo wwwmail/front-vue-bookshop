@@ -7,7 +7,9 @@
 <template>
 
 <div class="container main-container">
-  <h1>current order {{$route.params.id}}</h1>
+  <div class="row">
+    <h1 class="title-current-order text-center">current order {{$route.params.id}}</h1>
+  </div>
 
     <div class="row">
         <div class="col-12">{{infoMessage}}</div>
@@ -19,7 +21,7 @@
 
 </div>
 
-<div class="row item-list">
+<div class="row item-list top-title">
   <div class="col-1">#</div>
   <div class="col-2">order_id</div>
   <div class="col-3">book_id</div>

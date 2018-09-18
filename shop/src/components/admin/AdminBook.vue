@@ -7,8 +7,10 @@
 <template>
 
 <div class="container main-container">
-  <h1>current book {{$route.params.id}}</h1>
-
+  <div class="row">
+    <h1 class="title-current text-center">current book {{$route.params.id}}</h1>
+  </div>
+  <div class="update-book">
     <div class="row">
         <div class="col-12">{{infoMessage}}</div>
     </div>
@@ -34,51 +36,44 @@
     </div>
 
     <div class="row">
-      <div class="col-12"><button class="btn" v-on:click="updateBook">Update Book</button></div>
+      <div class="col-12"><button class="btn btn-style btn-update-book" v-on:click="updateBook">Update Book</button></div>
     </div>
+  </div>
+    <div class="update-authors">
+      <div class="row item-list">
+        <div class="col-3">authors</div>
+        <div class="col-9">{{book.author}}</div>
+      </div>
+      <div class="row item-list">
+        <div class="col-8">
+        <multiselect v-model="value" tag-placeholder="Add author to book"  placeholder="Search or add a tag" label="title" track-by="id"  :options="authors" :multiple="true" :taggable="true" @tag="addTag">
 
-    <div class="row item-list">
-      <div class="col-3">authors</div>
-      <div class="col-9">{{book.author}}</div>
-    </div>
-    <div class="row item-list">
-      <div class="col-8">
-      <multiselect v-model="value" tag-placeholder="Add author to book"  placeholder="Search or add a tag" label="title" track-by="id"  :options="authors" :multiple="true" :taggable="true" @tag="addTag">
+          <template slot="tag" slot-scope="props"><span class="multiselect__tag"><span>{{ props.option.title }}</span><i class="multiselect__tag-icon" @click="removeAuthor(props.remove(props.option) , props.option)"></i></span></template>
+        </multiselect>
 
-        <template slot="tag" slot-scope="props"><span class="multiselect__tag"><span>{{ props.option.title }}</span><i class="multiselect__tag-icon" @click="removeAuthor(props.remove(props.option) , props.option)"></i></span></template>
-      </multiselect>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-style btn-update-book" v-on:click="addAuthorToBook()"> add author</button>
+      </div>
+      </div>
+    </div>
+    <div class="update-genres">
+      <div class="row item-list">
+        <div class="col-3">genres</div>
+        <div class="col-9">{{book.genre}}</div>
+      </div>
+      <div class="row item-list">
+        <div class="col-8">
+        <multiselect v-model="genre" tag-placeholder="Add genre to book"  placeholder="Search and add genre" label="title" track-by="id"  :options="genres" :multiple="true" :taggable="true" @tag="addTag">
 
-    </div>
-    <div class="col-4">
-      <button class="btn" v-on:click="addAuthorToBook()"> add author</button>
-    </div>
-    </div>
+          <template slot="tag" slot-scope="props"><span class="multiselect__tag"><span>{{ props.option.title }}</span><i class="multiselect__tag-icon" @click="removeGenre(props.remove(props.option) , props.option)"></i></span></template>
+        </multiselect>
 
-    <div class="row item-list">
-      <div class="col-3">genres</div>
-      <div class="col-9">{{book.genre}}</div>
-    </div>
-    <div class="row item-list">
-      <div class="col-8">
-      <multiselect v-model="genre" tag-placeholder="Add genre to book"  placeholder="Search and add genre" label="title" track-by="id"  :options="genres" :multiple="true" :taggable="true" @tag="addTag">
-
-        <template slot="tag" slot-scope="props"><span class="multiselect__tag"><span>{{ props.option.title }}</span><i class="multiselect__tag-icon" @click="removeGenre(props.remove(props.option) , props.option)"></i></span></template>
-      </multiselect>
-
-    </div>
-    <div class="col-4">
-      <button class="btn" v-on:click="addGenreToBook()"> add genre</button>
-    </div>
-    </div>
-
-    <div class="row item-list">
-      <div class="col-1">#</div>
-      <div class="col-2">title</div>
-      <div class="col-3">genre</div>
-      <div class="col-3">author</div>
-      <div class="col-1">price</div>
-      <div class="col-1">discount</div>
-      <div class="col-1"></div>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-style btn-update-book" v-on:click="addGenreToBook()"> add genre</button>
+      </div>
+      </div>
     </div>
 
 

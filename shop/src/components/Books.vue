@@ -13,7 +13,7 @@
                 <div class="card-author">{{item.author}}</div>
                 <div v-if="item.discount" class="card-discount">{{item.discount}}%</div>
                 <div class="card-price">{{item.price}} $</div>
-                <span class="btn btn-add-cart" v-on:click="addToCart(item.id)"  v-if="isAuth" >Add to cart</span>
+                <span class="btn btn-style btn-add-cart" v-on:click="addToCart(item.id)"  v-if="isAuth" >Add to cart</span>
             </div>
         </div>
     </div>

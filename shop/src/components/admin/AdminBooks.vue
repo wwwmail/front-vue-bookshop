@@ -6,7 +6,7 @@
 
 <template>
 
-<div class="container main-container">
+<div class="container main-container books-container-admin">
     <div class="row">
         <div class="col-12">{{infoMessage}}</div>
     </div>
@@ -18,7 +18,7 @@
       <div class="col-3">author</div>
       <div class="col-1">price</div>
       <div class="col-1">discount</div>
-      <div class="col-1"></div>
+      <div class="col-1">delet</div>
     </div>
 
 
@@ -29,9 +29,9 @@
       <div class="col-3">{{item.author}}</div>
       <div class="col-1">{{item.price}}</div>
       <div class="col-1">{{item.discount}}</div>
-      <div class="col-1"><p v-on:click="deleteBook(item.id)">
+      <div class="col-1"><a class="delete" v-on:click="deleteBook(item.id)">
           <icon name="trash-alt"></icon>
-      </p></div>
+      </a></div>
     </div>
 
 

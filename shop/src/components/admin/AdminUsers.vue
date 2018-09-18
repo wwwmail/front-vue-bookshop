@@ -6,35 +6,31 @@
 
 <template>
 
-<div class="container main-container">
+<div class="container main-container users-admin-container">
     <div class="row">
         <div class="col-12">{{infoMessage}}</div>
     </div>
 
-    <div class="row item-list">
+    <div class="row item-list top-title">
       <div class="col-1">#</div>
-      <div class="col-2">email</div>
+      <div class="col-3">email</div>
       <div class="col-3">firstName</div>
       <div class="col-3">lastName</div>
-      <div class="col-1">discout</div>
-      <div class="col-1"></div>
-      <div class="col-1"></div>
+      <div class="col-1 text-center">discout</div>
+      <div class="col-1 text-center">delete</div>
     </div>
 
 
     <div class="row item-list"  v-for="(item,index) in users">
       <div class="col-1">{{index+1}}</div>
-      <div class="col-2"> <router-link :to="{ name: 'AdminUser', params: {id: item.id } }">{{item.email}} </router-link></div>
+      <div class="col-3"> <router-link :to="{ name: 'AdminUser', params: {id: item.id } }">{{item.email}} </router-link></div>
 
       <div class="col-3">{{item.firstName}}</div>
       <div class="col-3">{{item.lastName}}</div>
-      <div class="col-1">{{item.discount}}%</div>
-      <div class="col-1"><p v-on:click="deleteUser(item.id)">
+      <div class="col-1 text-center">{{item.discount}}%</div>
+      <div class="col-1 text-center"><a class="delete" v-on:click="deleteUser(item.id)">
           <icon name="trash-alt"></icon>
-      </p></div>
-
-      <div class="col-1"></div>
-
+      </a></div>
     </div>
 
 

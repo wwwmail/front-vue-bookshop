@@ -6,9 +6,10 @@
 
 <template>
 
-<div class="container main-container">
-  <h1>current user {{$route.params.id}}</h1>
-
+<div class="container main-container user-admin-container">
+  <div class="row">
+    <h1 class="title-current-user text-center">current user {{$route.params.id}}</h1>
+  </div>
     <div class="row">
         <div class="col-12">{{infoMessage}}</div>
     </div>
@@ -34,7 +35,7 @@
     </div>
 
     <div class="row">
-      <div class="col-12"><button class="btn" v-on:click="updateuser">Update user</button></div>
+      <div class="col-12"><button class="btn btn-style" v-on:click="updateuser">Update user</button></div>
     </div>
 
 
