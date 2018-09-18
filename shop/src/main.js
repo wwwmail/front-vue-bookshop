@@ -28,7 +28,8 @@ Vue.use(VueAxios, axios);
 
 const vueConfig = require('vue-config')
 const configs = {
-  API: 'http://new-rest.test',
+  //API: 'http://new-rest.test',
+  API: 'http://192.168.0.15/~user4/php7/bookshop',
   expiresCookie: '1h' // It's better to require a config file
 }
 

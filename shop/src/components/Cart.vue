@@ -38,12 +38,12 @@
         </div>
         <div class="col-2 text-center">
 
-            <span v-on:click="subtractCountBook(item.bookId, item.count)" class=" minus">
-                -
+            <span v-on:click="subtractCountBook(item.bookId, item.count)" class="">
+                - <icon name="angle-left"></icon>
             </span> <span class="">{{item.count}}</span>
 
-            <span v-on:click="addCountBook(item.bookId, item.count)" class=" plus">
-                +
+            <span v-on:click="addCountBook(item.bookId, item.count)" class="">
+               <icon name="angle-right"></icon> +
             </span>
         </div>
         <div class="col-1 text-center">
